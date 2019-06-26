@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PrimeNumber</title>
+</head>
+<body>
+<script>
+    let numbers = Number(prompt("Nhap so luong so nguyen to: "));
+    let count=0;
+    let N = 2;
+    while ( count<=numbers){
+        if(checkSNT(N)){
+            document.write(N + " ");
+            count ++;
+        }
+        N++;
+    }
+    
+    function checkSNT(N) {
+        if(N <2){
+            return false;
+        }
+        if(N == 2){
+            return true;
+        }
+        for(let i=2;i<=Math.sqrt(N);i++){
+            if(N%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
